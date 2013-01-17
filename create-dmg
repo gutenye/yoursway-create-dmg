@@ -90,7 +90,7 @@ while test "${1:0:1}" = "-"; do
       pure_version; exit 0;;
     --app-drop-link)
       APPLICATION_LINK=$2
-      APPLICATION_CLAUSE="set position of item \"Applications\" to {$2, $3}
+      APPLICATION_CLAUSE="set position of item \" \" to {$2, $3}
 "
       shift; shift; shift;;
     --eula)
@@ -115,7 +115,7 @@ DMG_TEMP_NAME="$DMG_DIR/rw.${DMG_NAME}"
 SRC_FOLDER="$(cd "$2" > /dev/null; pwd)"
 test -z "$VOLUME_NAME" && VOLUME_NAME="$(basename "$DMG_PATH" .dmg)"
 
-AUX_PATH="$(dirname $(readlink $0))/support"
+AUX_PATH="$(dirname $([ -L $0 ] && readlink $0 || echo $0))/support"
 
 test -d "$AUX_PATH" || {
   echo "Cannot find support directory: $AUX_PATH"
@@ -150,7 +150,7 @@ fi
 if ! test -z "$APPLICATION_LINK"; then
   echo "making link to Applications dir"
   echo $MOUNT_DIR
-  ln -s /Applications "$MOUNT_DIR/Applications"
+  ln -s /Applications "$MOUNT_DIR/ "
 fi
 
 if ! test -z "$VOLUME_ICON_FILE"; then

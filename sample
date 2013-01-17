@@ -1,3 +1,5 @@
 #! /bin/bash
-test -f test2.dmg && rm test2.dmg
-./create-dmg --window-size 500 300 --background ~/Projects/eclipse-osx-repackager/build/background.gif --icon-size 96 --volname "Hyper Foo" --app-drop-link 380 205 --icon "Eclipse OS X Repackager" 110 205 test2.dmg /Users/andreyvit/Projects/eclipse-osx-repackager/temp/Eclipse\ OS\ X\ Repackager\ r10/
+
+test -f Hello.dmg && rm Hello.dmg
+
+./create-dmg --window-size 480 540 --background sample-data/background.png --icon-size 128 --volname "Hello" --app-drop-link 240 390 --icon "Hello" 240 125 Hello.dmg sample-data/Hello
