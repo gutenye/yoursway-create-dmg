@@ -2,4 +2,4 @@
 
 test -f Hello.dmg && rm Hello.dmg
 
-./create-dmg --window-size 480 540 --background sample-data/background.png --icon-size 128 --volname "Hello" --app-drop-link 240 390 --icon "Hello" 240 125 Hello.dmg sample-data/Hello
+./create-dmg --window-size 480 540 --background sample-data/background.png --icon-size 128 --volname "Hello" --app-drop-link " " 240 390 --icon "Hello" 240 125 Hello.dmg sample-data/Hello

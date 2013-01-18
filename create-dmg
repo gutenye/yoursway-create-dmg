@@ -90,9 +90,9 @@ while test "${1:0:1}" = "-"; do
       pure_version; exit 0;;
     --app-drop-link)
       APPLICATION_LINK=$2
-      APPLICATION_CLAUSE="set position of item \" \" to {$2, $3}
+      APPLICATION_CLAUSE="set position of item \"$2\" to {$3, $4}
 "
-      shift; shift; shift;;
+      shift; shift; shift; shift;;
     --eula)
       EULA_RSRC=$2
       shift; shift;;
